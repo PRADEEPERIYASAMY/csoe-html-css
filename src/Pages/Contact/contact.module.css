@@ -1,0 +1,232 @@
+.contact_container{
+    background: pink;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+ul.contact_ui{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 200;
+}
+
+ul.contact_ui li {
+    list-style: none;
+    margin: 0 25px;
+}
+
+ul.contact_ui li a {
+    position: relative;
+    text-decoration: none;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    background: #171515;
+    border-radius: 50%;
+    font-size: 30px;
+    color: #666;
+    transition: .5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul.contact_ui li a:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: #fc686d;
+    transition: .5s;
+    transform: scale(.9);
+    z-index: -1;
+}
+
+ul.contact_ui li a:hover:before{
+    transform: scale(1.2);
+    box-shadow: 0 0 15px #fc686d;
+    filter: blur(3px);
+}
+
+ul.contact_ui li a:hover{
+    color: #ffa502;
+    box-shadow: 0 0 15px #fc686d;
+    text-shadow: 0 0 15px #fc686d;
+}
+
+ul.contact_ui li a div.tooltip{
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: black;
+    padding: 0.2rem 1rem;
+    border-radius: 40px;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-align: center;
+    opacity: 0;
+    pointer-events: none;
+    text-transform: uppercase;
+    transform: translate(-50%,-100%);
+    transition: all 0.3s ease;
+    align-self: center;
+    z-index: 1;
+}
+
+ul.contact_ui li a div.tooltip::after{
+    display: block;
+    position: absolute;
+    bottom: 1px;
+    left: 50%;
+    width: 0;
+    height: 0;
+    content: "";
+    border: solid;
+    border-width: 10px 10px 0 10px;
+    border-color: transparent;
+    border-top-color: black;
+    transform: translate(-50%,100%);
+}
+
+ul.contact_ui li a:hover div.tooltip{
+    visibility: visible;
+    opacity: 1;
+    transform: translate(-50%,-180%);
+}
+
+
+div.grid_holder{
+    width: 300px;
+    height: 300px;
+    position: relative;
+}
+
+div.card{
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #ffffff;
+    width: 300px;
+    height: 300px;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transform-origin: center;
+    transition: 0.4s cubic-bezier(0.28, 0.55,0.385,1.65);
+    font-size: 12px;
+    overflow: hidden;
+}
+
+div.image{
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+}
+
+div.image img{
+    width: 100%;
+    height: 100%;
+}
+
+div.detail{
+    padding: 10px 20px;
+    position: relative;
+}
+
+div.detail h3{
+    font-size: 15px;
+    margin: 0;
+    color: #171515;
+}
+
+div.detail i{
+    font-size: 10px;
+    margin-bottom: 5px;
+    color: #fc686d;
+}
+
+div.detail p{
+    font-size: 13px;
+    font-weight: 500px;
+    color: #868686;
+    margin: 0;
+}
+
+div.next{
+    position: absolute;
+    top: 53%;
+    right: 4%;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+div.next i{
+    background-color: #fc686d;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+div.card:nth-child(1){
+    z-index: 10;
+    top: 0px;
+    transform-origin: top;
+    transform: scale(1);
+    opacity: 1;
+}
+
+div.card:nth-child(2){
+    z-index: 9;
+    top: -15px;
+    transform-origin: top;
+    transform: scale(0.9);
+    opacity: 0.9;
+}
+
+div.card:nth-child(3){
+    z-index: 8;
+    top: -30px;
+    transform-origin: top;
+    transform: scale(0.8);
+    opacity: 0.8;
+}
+
+div.card:nth-child(4){
+    z-index: 7;
+    top: -45px;
+    transform-origin: top;
+    transform: scale(0.7);
+    opacity: 0.7;
+}
+
+div.card:nth-child(5){
+    z-index: 8;
+    top: -60px;
+    transform-origin: top;
+    transform: scale(0.6);
+    opacity: 0.6;
+}
+
+div.card:first-child:hover{
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    transform: scale(1.05);
+}
+
+.card:last-child{opacity: 0;}

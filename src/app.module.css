@@ -1,0 +1,135 @@
+.app{
+  background: pink;
+  height: 100vh;
+  width: 100vw;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin: 0;
+}
+
+.container{
+  margin-left: 60px;
+  transition: margin-left ease 0.6s;
+  height: 100vh;
+  width: calc(100% - 60px);
+}
+
+input.hamburger {
+  display: none;
+}
+
+.icon{
+  background: #fff;
+  cursor: pointer;
+  display: block;
+  height: 20px;
+  width: 20px;
+  padding: 20px;
+}
+
+label.icon{
+  position: fixed;
+  z-index: 200;
+}
+
+.icon .menu,
+.icon .menu::before,
+.icon .menu::after{
+  background: #9f81bd;
+  content: '';
+  display: block;
+  height: 2px;
+  position: absolute;
+  transition: background ease .3s, top ease 0.3s 0.3s, transform ease 0.3s;
+  width: 20px;
+}
+
+.hamburger:checked + .icon .menu::after{
+  transform: rotate(-45deg);
+}
+
+.hamburger:checked + .icon .menu::before,
+.hamburger:checked + .icon .menu::after{
+  top: 0;
+  transition: top ease 0.3s, transform ease 0.3s 0.3s;
+}
+
+nav{
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 100vh;
+  padding-top: 60px;
+  position: fixed;
+  transition: width ease 0.6s;
+  width: 60px;
+  z-index: 100;
+  overflow: hidden
+}
+
+.hamburger:checked ~ nav{
+  width: 200px;
+}
+
+.hamburger:checked ~ .container{
+  margin-left: 200px;
+}
+
+.icon:hover .menu,.icon:hover .menu::before, .icon:hover .menu::after{
+  background: #fc686d;
+}
+
+.icon .menu{
+  left: 18px;
+  top: 27px;
+}
+
+.icon .menu::before{
+  top: -6px;
+}
+
+.icon .menu::after{
+  top: 6px;
+}
+
+.hamburger:checked + .icon .menu{
+  background: transparent;
+}
+
+.hamburger:checked + .icon .menu::before{
+  transform: rotate(45deg);
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li{
+  cursor: pointer;
+  display: block;
+  line-height: 60px;
+  padding-left: 16px;
+  white-space: nowrap;
+  color: #fff;
+  transition: color ease 0.6s;
+}
+
+.hamburger:checked ~ nav li {
+  color: #9fb1bd;
+}
+
+nav li:hover{
+  background: #fc686d;
+  color: #fff !important;
+  transition:  none;
+}
+
+nav li:hover span{
+  color: #fff;
+}
+
+nav span{
+  color: #9fb1bd;
+  margin-right: 24px;
+  vertical-align: text-bottom;
+}
